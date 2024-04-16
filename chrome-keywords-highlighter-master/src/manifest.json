@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+	"name": "Privacy-AI" ,
+	"short_name": "Privacy-AI",
+	"description": "Privacy-AI",
+	"version": "0.0.1",
+	"icons": {
+		
+		"256": "icons/icon.jpg"
+	},
+	"permissions": ["tabs"],
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["content.js"],
+			"css": ["content.css"]
+		}
+	],
+	"browser_action": {
+		"default_icon": {
+			"256": "icons/icon.jpg"
+		},
+		"default_title": "Privacy-AI",
+		"default_popup": "popup.html"
+	},
+	"options_page": "options.html"
+}
